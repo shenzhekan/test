@@ -33,9 +33,9 @@ public class AopAspect {
 	@Pointcut("execution(* com.szk.aop.service.Service.*Service*(Long,*))")
 	public void executionDemo() {}
 	
-	@Before("executionDemo()")
-	public void beforeExecDemo() {
-		System.out.println("before,get args:");
+	@Before("executionDemo() && args(num,..)")       //这里注意，当原参数列表大于1，但是这里只拦截一个参数，要用..来表示不拦截的参数
+	public void beforeExecDemo(Long num) {
+		System.out.println("before>>>>>>get num:"+num);
 	}
 	
 }
