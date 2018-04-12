@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance "
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.szk.spring</groupId>
+  <artifactId>spring.aop</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>spring.aop Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  		<org.springframework.version>3.1.0.RELEASE</org.springframework.version>
+  </properties>
+  <dependencies>
+  
+  	<!--  >>>>>>>>>>>>>这是依赖了junit的各种jar包,junit4.X使用的时注解方式，3.X使用的是编程方式<<<<<<<<<<<<<<<<   -->
+    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+    </dependency>
+    	
+    <!--  >>>>>>>>>>>>>这是依赖了spring的各种jar包<<<<<<<<<<<<<<<<   -->
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    	<version>${org.springframework.version}</version>
+    </dependency>
+    
+    <!--  >>>>>>>>>>>>>这是依赖了aspectj的各种jar包<<<<<<<<<<<<<<<<   -->
+    <dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjrt</artifactId>
+	    <version>1.6.11</version>
+    </dependency>
+     
+    <dependency>
+		<groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.6.11</version>
+    </dependency> 
+    
+    
+    <dependency>    <!-- 是一个很强大的代码生成库，在spring aop中提供方法拦截操作 -->
+	    <groupId>cglib</groupId>
+	    <artifactId>cglib-nodep</artifactId>
+	    <version>3.2.5</version>
+	</dependency>
+    
+    
+    <!--  >>>>>>>>>>>>>这是依赖了spring aop的各种jar包<<<<<<<<<<<<<<<<   -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+ 
+  </dependencies>
+  
+  
+  <build>
+  	<plugins>
+  		         <!-- 设置默认的jre环境为1.8 -->
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.0</version>
+  			<configuration>
+  				<source>1.8</source>
+  				<target>1.8</target>
+  				<encoding>UTF-8</encoding>
+  				<verbal>true</verbal>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+    <finalName>spring.aop</finalName>
+  </build>
+</project>
