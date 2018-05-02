@@ -38,7 +38,7 @@
 		<groupId>org.aspectj</groupId>
 	    <artifactId>aspectjweaver</artifactId>
 	    <version>1.6.11</version>
-    </dependency> 
+    </dependency>
     
     
     <dependency>    <!-- 是一个很强大的代码生成库，在spring aop中提供方法拦截操作 -->
@@ -75,4 +75,20 @@
   	</plugins>
     <finalName>spring.aop</finalName>
   </build>
+  
+  <profiles>
+   <profile>
+        <id>jdk-1.8</id>
+        <!-- 另外一种激活方式 -->
+        <activation>
+            <activeByDefault>true</activeByDefault>
+            <jdk>1.8</jdk>
+        </activation>
+        <properties>
+            <maven.compiler.source>1.8</maven.compiler.source>
+            <maven.compiler.target>1.8</maven.compiler.target>
+			<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        </properties>
+    </profile>
+  </profiles>
 </project>
